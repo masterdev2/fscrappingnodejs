@@ -1,11 +1,12 @@
 const { con } = require('../config')
 
-async function getFilmByTitle(args){
+async function getFilm(args){
     var query = `
-    SELECT id, title, description, keywords, type 
-    FROM scrapping.shows 
-    WHERE title="${args.title}"
-    `
+    SELECT * 
+    FROM scrapping.shows
+    INNER JOIN scrapping.egy_link on scrapping.egy_link.show_id = scrapping.shows.id`
+    if(args.title) query += ` WHERE title="${args.title}"`
+    else query += ` WHERE scrapping.shows.id="${args.id}"`
     return new Promise(function(resolve, reject){
         var result = con.query(query, [], function (error, results, fields) {
             if (error) { console.log(error); return false}
@@ -29,18 +30,6 @@ async function insertFilm(args){
     var query = `
     INSERT INTO scrapping.shows(nom, image,title, description, keywords, type) 
     VALUES ("${args.nom}", "${args.image}", "${args.title}","${args.desc}","${args.keywords}",1)
-    `
-    return new Promise(function(resolve, reject){
-        var result = con.query(query, [], function (error, results, fields) {
-            if (error) { console.log(error); return false}
-            else resolve(results)
-        })
-    })
-}
-async function insertFilmCateg(args){
-    var query = `
-    INSERT INTO scrapping.show_categ(categ_id, show_id) 
-    VALUES (${args.catgId},${args.fId})
     `
     return new Promise(function(resolve, reject){
         var result = con.query(query, [], function (error, results, fields) {
@@ -73,27 +62,21 @@ async function getPlayer(args){
         })
     })
 }
-
 async function selectFilms(args){
     var query = `
     SELECT * 
     FROM scrapping.show_categ 
-    INNER JOIN scrapping.shows on show_id = scrapping.show_categ.show_id
-    WHERE type = 1`
-
-    if(args.query){
+    INNER JOIN scrapping.shows on scrapping.shows.id = scrapping.show_categ.show_id
+    WHERE scrapping.shows.type = 1`
+    
+    if(args.query !== undefined){
         query+= ` AND (scrapping.shows.nom like "%${args.query}%" or scrapping.shows.title like "%${args.query}%")`
     }
-    if(args.categ_id){
+    if(args.categ_id !== undefined){
         query += `
-        AND scrapping.show_categ.id=${args.categ_id}`
+        AND scrapping.show_categ.categ_id=${args.categ_id}`
     }
 
-    if(args.page !== undefined){
-        var limit = 32
-        var offset = limit*args.page
-        query += ` LIMIT ${limit} OFFSET ${offset}`
-    }
     return new Promise(function(resolve, reject){
         var result = con.query(query, [], function (error, results, fields) {
             if (error) { console.log(error); return false}
@@ -105,8 +88,7 @@ async function selectFilms(args){
 module.exports = {
     insertFilm,
     insertLink,
-    insertFilmCateg,
-    getFilmByTitle,
+    getFilm,
     getShowcateg,
-    selectFilms
+    selectFilms,
 }

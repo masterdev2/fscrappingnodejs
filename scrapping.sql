@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 16 déc. 2020 à 11:30
+-- Généré le :  ven. 18 déc. 2020 à 11:58
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP :  7.4.10
 
@@ -4328,7 +4328,9 @@ INSERT INTO `egy_link` (`id`, `show_id`, `link`) VALUES
 (4250, 4250, 'https://fito.egybest.network/movie/imraa-hazzat-arsh-misr-1995/?ref=movies-p42'),
 (4251, 4251, 'https://fito.egybest.network/movie/crimson-tide-1995/?ref=movies-p42'),
 (4252, 4252, 'https://fito.egybest.network/movie/braveheart-1995/?ref=movies-p42'),
-(4253, 4253, 'https://fito.egybest.network/movie/underground-1995/?ref=movies-p42');
+(4253, 4253, 'https://fito.egybest.network/movie/underground-1995/?ref=movies-p42'),
+(4254, 4254, 'https://fito.egybest.network/movie/the-croods-a-new-age-2020/?ref=movies-p1'),
+(4255, 4255, 'https://fito.egybest.network/movie/siberia-2020/?ref=movies-p1');
 
 -- --------------------------------------------------------
 
@@ -8647,7 +8649,9 @@ INSERT INTO `shows` (`id`, `nom`, `title`, `description`, `keywords`, `type`, `i
 (4250, 'امرأة هزت عرش مصر(1995)', 'مشاهدة فيلم امرأة هزت عرش مصر (1995)  ايجي بست website', 'مشاهدة فيلم امرأة هزت عرش مصر 1995  ايجي بست. فيلم امرأة هزت عرش مصر Imra\'a Hazzat A\'rsh Misr بجودة عالية امرأة هزت عرش مصر كامل امرأة هزت عرش مصر مشاهدة امرأة هزت عرش مصر تحميل website. فيلم التاريخ و الدراما و الحرب ايجي بست EgyBest', 'امرأة هزت عرش مصر, امرأة هزت عرش مصر website, امرأة هزت عرش مصر ايجي بست, مشاهدة امرأة هزت عرش مصر, تحميل امرأة هزت عرش مصر, فيلم امرأة هزت عرش مصر', 1, 'https://i.egycdn.com/pic/WmFwZndlY21tbWJtcGptWWJFY21ZanZOQk5URHo.jpg'),
 (4251, 'Crimson Tide(1995)', 'مشاهدة فيلم Crimson Tide (1995) مترجم ايجي بست website', 'مشاهدة فيلم Crimson Tide 1995 مترجم ايجي بست. فيلم Crimson Tide مد قرمزي بجودة عالية Crimson Tide كامل Crimson Tide مشاهدة Crimson Tide تحميل website. فيلم الاكشن و الدراما و الاثارة و الحرب ايجي بست EgyBest', 'Crimson Tide, Crimson Tide website, Crimson Tide ايجي بست, مشاهدة Crimson Tide, تحميل Crimson Tide, فيلم Crimson Tide', 1, 'https://i.egycdn.com/pic/WmFwZndlY21FbXZtYm12dk5lY21ZWWJtdnhtRXhtbQ.jpg'),
 (4252, 'Braveheart(1995)', 'مشاهدة فيلم Braveheart (1995) مترجم ايجي بست website', 'مشاهدة فيلم Braveheart 1995 مترجم ايجي بست. فيلم Braveheart القلب الشجاع بجودة عالية Braveheart كامل Braveheart مشاهدة Braveheart تحميل website. فيلم السيرة الذاتية و الدراما و التاريخ و الحرب ايجي بست EgyBest', 'Braveheart, Braveheart website, Braveheart ايجي بست, مشاهدة Braveheart, تحميل Braveheart, فيلم Braveheart', 1, 'https://i.egycdn.com/pic/WmFwZndlY3ZOWUxjRWNjd1BsbWJ2TkNqbXo.jpg'),
-(4253, 'Underground(1995)', 'مشاهدة فيلم Underground (1995) مترجم ايجي بست website', 'مشاهدة فيلم Underground 1995 مترجم ايجي بست. فيلم Underground  بجودة عالية Underground كامل Underground مشاهدة Underground تحميل website. فيلم الكوميديا و الدراما و الحرب ايجي بست EgyBest', 'Underground, Underground website, Underground ايجي بست, مشاهدة Underground, تحميل Underground, فيلم Underground', 1, 'https://i.egycdn.com/pic/WmFwZndlY21Ub2Ntam1ZbUVjeG1URXZOdm1kVEU.jpg');
+(4253, 'Underground(1995)', 'مشاهدة فيلم Underground (1995) مترجم ايجي بست website', 'مشاهدة فيلم Underground 1995 مترجم ايجي بست. فيلم Underground  بجودة عالية Underground كامل Underground مشاهدة Underground تحميل website. فيلم الكوميديا و الدراما و الحرب ايجي بست EgyBest', 'Underground, Underground website, Underground ايجي بست, مشاهدة Underground, تحميل Underground, فيلم Underground', 1, 'https://i.egycdn.com/pic/WmFwZndlY21Ub2Ntam1ZbUVjeG1URXZOdm1kVEU.jpg'),
+(4254, 'The Croods: A New Age(2020)', 'مشاهدة فيلم The Croods: A New Age (2020) مترجم ايجي بست website', 'مشاهدة فيلم The Croods: A New Age 2020 مترجم ايجي بست. فيلم The Croods: A New Age The Croods 2 عائلة كرودز: عصر جديد بجودة عالية The Croods: A New Age كامل The Croods: A New Age مشاهدة The Croods: A New Age تحميل website. الفيلم الانيميشن و المغامرة و الك', 'The Croods: A New Age, The Croods: A New Age website, The Croods: A New Age ايجي بست, مشاهدة The Croods: A New Age, تحميل The Croods: A New Age, فيلم The Croods: A New Age', 1, 'https://i.egycdn.com/pic/WmFwZndlY21ZWW90Y3ZjbWJFY21URW1tUEtQeG1i.jpg'),
+(4255, 'Siberia(2020)', 'مشاهدة فيلم Siberia (2020) مترجم ايجي بست website', 'مشاهدة فيلم Siberia 2020 مترجم ايجي بست. فيلم Siberia سيبريا بجودة عالية Siberia كامل Siberia مشاهدة Siberia تحميل website. فيلم الدراما و الخيال و الرعب ايجي بست EgyBest', 'Siberia, Siberia website, Siberia ايجي بست, مشاهدة Siberia, تحميل Siberia, فيلم Siberia', 1, 'https://i.egycdn.com/pic/WmFwZndlY21ZcFlFbWptbW1hY21FdmNtandUYmFtbW1J.jpg');
 
 -- --------------------------------------------------------
 
@@ -14664,7 +14668,56 @@ INSERT INTO `show_categ` (`id`, `categ_id`, `show_id`) VALUES
 (5995, 13, 4250),
 (5996, 13, 4251),
 (5997, 13, 4252),
-(5998, 13, 4253);
+(5998, 13, 4253),
+(5999, 1, 4254),
+(6000, 7, 4255);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `stats`
+--
+
+CREATE TABLE `stats` (
+  `id` int(11) NOT NULL,
+  `obj_id` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
+  `count` int(11) NOT NULL,
+  `type` int(11) NOT NULL DEFAULT 1,
+  `obj` varchar(255) NOT NULL DEFAULT 'show'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `stats`
+--
+
+INSERT INTO `stats` (`id`, `obj_id`, `date`, `count`, `type`, `obj`) VALUES
+(2, 1, '2020-12-17', 12, 1, 'show'),
+(3, 36, '2020-12-17', 12, 1, 'show'),
+(4, 40, '2020-12-17', 1, 1, 'show'),
+(5, 3, '2020-12-17', 2, 1, 'categ'),
+(6, 4, '2020-12-17', 2, 1, 'categ'),
+(7, 2, '2020-12-17', 3, 1, 'categ'),
+(8, 8, '2020-12-17', 8, 1, 'show'),
+(9, 11, '2020-12-17', 1, 1, 'categ'),
+(10, 11, '2020-12-17', 1, 1, 'show'),
+(11, 60, '2020-12-17', 3, 1, 'show'),
+(12, 7, '2020-12-17', 2, 1, 'categ'),
+(13, 12, '2020-12-17', 1, 1, 'categ'),
+(14, 4, '2020-12-17', 4, 1, 'show'),
+(15, 8, '2020-12-17', 1, 1, 'categ'),
+(16, 13, '2020-12-17', 1, 1, 'categ'),
+(17, 8, '2020-12-18', 3, 1, 'show'),
+(18, 2, '2020-12-18', 4, 1, 'categ'),
+(19, 11, '2020-12-18', 1, 1, 'categ'),
+(20, 9, '2020-12-18', 2, 1, 'categ'),
+(21, 5, '2020-12-18', 1, 1, 'categ'),
+(22, 13, '2020-12-18', 9, 1, 'categ'),
+(23, 104, '2020-12-18', 1, 1, 'show'),
+(24, 8, '2020-12-18', 1, 1, 'categ'),
+(25, 2501, '2020-12-18', 1, 1, 'show'),
+(26, 10, '2020-12-18', 3, 1, 'categ'),
+(27, 3, '2020-12-18', 3, 1, 'categ');
 
 --
 -- Index pour les tables déchargées
@@ -14695,6 +14748,12 @@ ALTER TABLE `show_categ`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `stats`
+--
+ALTER TABLE `stats`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -14708,19 +14767,25 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `egy_link`
 --
 ALTER TABLE `egy_link`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4254;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4256;
 
 --
 -- AUTO_INCREMENT pour la table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4254;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4256;
 
 --
 -- AUTO_INCREMENT pour la table `show_categ`
 --
 ALTER TABLE `show_categ`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5999;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6001;
+
+--
+-- AUTO_INCREMENT pour la table `stats`
+--
+ALTER TABLE `stats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,0 +1,7 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <h2>{{show.nom}}</h2>
+    <img style="width: 100%;" src="{{show.image}}">
+    <a class="btn btn-success" target="_blank" href="/player/{{show.id}}">Play</a>
+{% endblock %}
