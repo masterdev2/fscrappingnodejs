@@ -64,18 +64,21 @@ async function getPlayer(args){
 }
 async function selectFilms(args){
     var query = `
-    SELECT * 
+    SELECT DISTINCT showE.id, showE.nom, showE.title, showE.keywords, showE.image, showE.description, 
+    (SELECT COUNT(*) FROM scrapping.stats as impress WHERE showE.id = impress.obj_id AND impress.obj = "show" AND impress.type = 1) AS impressionCount,
+    (SELECT COUNT(*) FROM scrapping.stats as v WHERE showE.id = v.obj_id AND v.obj = "show" AND v.type = 2) AS viewsCount 
     FROM scrapping.show_categ 
-    INNER JOIN scrapping.shows on scrapping.shows.id = scrapping.show_categ.show_id
-    WHERE scrapping.shows.type = 1`
+    INNER JOIN scrapping.shows as showE on showE.id = scrapping.show_categ.show_id
+    WHERE showE.type = 1`
     
     if(args.query !== undefined && args.query){
-        query+= ` AND (scrapping.shows.nom like "%${args.query}%" or scrapping.shows.title like "%${args.query}%")`
+        query+= ` AND (showE.nom like "%${args.query}%" or showE.title like "%${args.query}%")`
     }
     if(args.categ_id !== undefined && args.categ_id){
         query += `
         AND scrapping.show_categ.categ_id=${args.categ_id}`
     }
+    query += ` ORDER BY impressionCount DESC, viewsCount DESC`
     return new Promise(function(resolve, reject){
         var result = con.query(query, [], function (error, results, fields) {
             if (error) { console.log(error); return false}
