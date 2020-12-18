@@ -17,12 +17,34 @@ app.use(bodyParser.urlencoded());
 
 app.post('/film/search', async function(req, res){
     var query = req.body.query
-    var shows = await selectFilms({query})
+    var categ_id = req.query.categ !== undefined ? req.query.categ : ''
+
+    var args = {
+        query,
+        categ_id
+    }
+    var shows = await selectFilms(args)
     .then( (res) => { return res } )
     .catch( (err) => { return [] }  )
-    
+    var page = req.query.page !== undefined ? req.query.page : 0
+    var max = 32
+    var from = page*max
+    var total = shows.length
+    var newShows = shows.slice(from, from+max)
+    var now = new Date();
+    for(var show of newShows){
+        objStat({
+            objId: show.id,
+            type: 2,
+            obj: 'show',
+            date: dateFormat(now, "yyyy-mm-dd")
+        })
+    }
     res.render('liste.twig', {
-        shows : shows
+        shows : newShows,
+        pages : total/max,
+        query,
+        categ_id
     });
 })
 app.get('/player/:id', async function(req, res){
@@ -62,7 +84,14 @@ app.get('/film/show/:id', async function(req, res){
     });
 })
 app.get('/', async function(req, res){
-    var shows = await selectFilms({})
+    var query = req.query.query !== undefined ? req.query.query : ''
+    var categ_id = req.query.categ !== undefined ? req.query.categ : ''
+
+    var args = {
+        query,
+        categ_id
+    }
+    var shows = await selectFilms(args)
     .then( (res) => { return res } )
     .catch( (err) => { return [] }  )
     //shows = []
@@ -71,10 +100,20 @@ app.get('/', async function(req, res){
     var from = page*max
     var total = shows.length
     var newShows = shows.slice(from, from+max)
-
-    res.render('index.twig', {
+    var now = new Date();
+    for(var show of newShows){
+        objStat({
+            objId: show.id,
+            type: 2,
+            obj: 'show',
+            date: dateFormat(now, "yyyy-mm-dd")
+        })
+    }
+    res.render('liste.twig', {
         shows : newShows,
-        pages : total/max
+        pages : total/max,
+        query,
+        categ_id
     });
 })
 
@@ -95,9 +134,18 @@ app.get('/categorie/:id', async function(req, res){
         obj: 'categ',
         date: dateFormat(now, "yyyy-mm-dd")
     })
+    for(var show of newShows){
+        objStat({
+            objId: show.id,
+            type: 2,
+            obj: 'show',
+            date: dateFormat(now, "yyyy-mm-dd")
+        })
+    }
     res.render('liste.twig', {
         shows : newShows,
-        pages : total/max
+        pages : total/max,
+        categ_id: req.params.id
     });
 })
 

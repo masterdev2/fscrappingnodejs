@@ -69,14 +69,13 @@ async function selectFilms(args){
     INNER JOIN scrapping.shows on scrapping.shows.id = scrapping.show_categ.show_id
     WHERE scrapping.shows.type = 1`
     
-    if(args.query !== undefined){
+    if(args.query !== undefined && args.query){
         query+= ` AND (scrapping.shows.nom like "%${args.query}%" or scrapping.shows.title like "%${args.query}%")`
     }
-    if(args.categ_id !== undefined){
+    if(args.categ_id !== undefined && args.categ_id){
         query += `
         AND scrapping.show_categ.categ_id=${args.categ_id}`
     }
-
     return new Promise(function(resolve, reject){
         var result = con.query(query, [], function (error, results, fields) {
             if (error) { console.log(error); return false}

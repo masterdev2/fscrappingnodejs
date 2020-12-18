@@ -10,6 +10,6 @@
         </div>
     {% endfor %}
     {% for i in 0 .. pages %}
-        <a style="margin: 3px;" class="btn btn-success" href="?page={{i}}">{{i}}<a/>
+        <a style="margin: 3px;" class="btn btn-success" href="/?page={{i}}{% if query is defined and query %}&query={{query}}{% endif %}{% if categ_id is defined and categ_id %}&categ_id={{categ_id}}{% endif %}">{{i}}<a/>
     {% endfor %}
 {% endblock %}

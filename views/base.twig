@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <a href="/">Home</a>
-                <form class="form-inline" method="post" action="/film/search">
+                <form class="form-inline" method="post" action="/film/search{% if categ_id is defined and categ_id %}?categ_id={{categ_id}}{% endif %}">
                     <div class="form-group mb-2">
                         <input required  type="text" class="form-control-plaintext" id="staticEmail2" name="query" placeholder="Ex: Tenet...">
                     </div>
